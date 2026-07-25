@@ -1,3 +1,10 @@
+/*
+=============================================
+Load Data from CRM and ERP Sources
+=============================================
+Script purpose:
+      This script loads data using bulk insert
+/*
 
 CREATE OR ALTER PROCEDURE bronze.load_bronze AS
 BEGIN
