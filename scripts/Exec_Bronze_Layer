@@ -1,0 +1,3 @@
+/* This code is to exec the bronze layer load */
+
+EXEC bronze.load_bronze
