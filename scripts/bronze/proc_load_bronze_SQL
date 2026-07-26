@@ -1,9 +1,19 @@
 /*
 =============================================
-Load Data from CRM and ERP Sources
+Stored Procedure: Load Bronze Layer (Source -> Bronze)
 =============================================
 Script purpose:
-      This script loads data using bulk insert
+      This stored procedure loads data into the bronze schema from external CSV files. 
+	  It performs the following actions:
+	  - Truncuates the brozne tables before loading the data.
+	  - It uses the BULK INSERT command to load data from CSV files to bronze tables.
+
+Parameters:
+	None.
+	This stored procedure does not accept any parameters or return any values.
+
+Usage:
+	EXEC bronze.load_bronze;
 /*
 
 
