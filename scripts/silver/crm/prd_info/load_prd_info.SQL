@@ -1,6 +1,9 @@
--- DATA TRANSFORMATION TO SILVER
+-- DATA CLEANING AND TRANSFORMATION
+-- INTO silver.crm_prd_info
 
+PRINT 'TRUNCATING TABLE: silver.crm_prd_info';
 TRUNCATE TABLE silver.crm_prd_info;
+PRINT 'INSERTING DATA INTO: silver.crm_prd_info';
 INSERT INTO silver.crm_prd_info (
 	prd_id,
 	cat_id,
@@ -38,7 +41,6 @@ SELECT
 
 
 FROM bronze.crm_prd_info
-
 
 
 
