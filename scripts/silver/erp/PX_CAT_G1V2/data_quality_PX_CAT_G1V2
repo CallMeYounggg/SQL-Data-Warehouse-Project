@@ -1,0 +1,15 @@
+-- Check for unwanted spaces
+SELECT * FROM silver.erp_PX_CAT_G1V2
+WHERE CAT != TRIM(CAT) OR SUBCAT != TRIM(SUBCAT) OR MAINTENANCE != TRIM(MAINTENANCE)
+
+-- Data standardization and consistency
+SELECT DISTINCT
+CAT FROM silver.erp_PX_CAT_G1V2
+
+SELECT DISTINCT
+SUBCAT FROM silver.erp_PX_CAT_G1V2
+
+SELECT DISTINCT
+MAINTENANCE FROM silver.erp_PX_CAT_G1V2
+
+SELECT * FROM silver.erp_PX_CAT_G1V2
