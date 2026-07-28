@@ -1,6 +1,9 @@
 -- DATA CLEANING AND TRANSFORMATION
+-- INTO silver.crm_cust_info
 
+PRINT '>> TRUNCATING TABLE: silver.crm_cust_info';
 TRUNCATE TABLE silver.crm_cust_info;
+PRINT '>> INSERTING DATA INTO: silver.crm_cust_info';
 INSERT INTO silver.crm_cust_info (
 	cst_id,
 	cst_key,
@@ -35,7 +38,4 @@ ROW_NUMBER() OVER (PARTITION BY cst_id ORDER BY cst_create_date DESC) as flag_la
 FROM bronze.crm_cust_info
 )t 
 WHERE flag_last = 1; -- Select the most recent record per customer
-
-
-
 
