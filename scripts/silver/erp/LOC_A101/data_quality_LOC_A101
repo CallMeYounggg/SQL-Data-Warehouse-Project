@@ -1,0 +1,9 @@
+-- Data standardization and consistency
+
+SELECT DISTINCT cntry
+
+FROM silver.erp_LOC_A101
+ORDER BY cntry
+
+SELECT *
+FROM silver.erp_LOC_A101
