@@ -1,6 +1,32 @@
 
 TRUNCATE TABLE silver.erp_LOC_A101;
+INSERT INTO silver.erp_LOC_A101(-- DATA CLEANING AND TRANSFORMATION
+-- INTO silver.erp_LOC_A101
+
+PRINT 'TRUNCATING TABLE: silver.erp_LOC_A101';
+TRUNCATE TABLE silver.erp_LOC_A101;
+PRINT 'INSERTING DATA INTO: silver.erp_LOC_A101';
 INSERT INTO silver.erp_LOC_A101(
+cid,
+cntry
+)
+
+SELECT 
+REPLACE(cid, '-' , '') cid,
+
+CASE WHEN TRIM(cntry) = ' DE' THEN 'Germany'
+	WHEN TRIM(cntry) IN ('US', 'USA') THEN 'United States'
+	WHEN TRIM(cntry) = '' OR cntry IS NULL THEN 'N/A'
+	ELSE TRIM(cntry)
+END AS cntry
+
+FROM bronze.erp_LOC_A101
+
+
+
+
+
+
 cid,
 cntry
 )
